@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,8 @@ import com.example.demo.R;
 
 public class GalleryFragment extends Fragment {
 
+    ListView order_List;
+
     private GalleryViewModel galleryViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -23,13 +26,12 @@ public class GalleryFragment extends Fragment {
         galleryViewModel =
                 ViewModelProviders.of(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        order_List = root.findViewById(R.id.order_List);
+
+        OrderAdapter orderAdapter = new OrderAdapter(getActivity().getApplicationContext());
+        order_List.setAdapter(orderAdapter);
+
         return root;
     }
 }

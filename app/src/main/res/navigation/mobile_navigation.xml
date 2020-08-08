@@ -14,12 +14,18 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.demo.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="Order"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.demo.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="About us"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_contactus"
+        android:name="com.example.demo.contactusFragment"
+        android:label="About us"
+        tools:layout="@layout/fragment_contactus" />
 </navigation>
