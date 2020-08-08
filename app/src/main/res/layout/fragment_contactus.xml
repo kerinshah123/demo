@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.slideshow.SlideshowFragment">
+    tools:context=".contactusFragment">
 
     <ImageView
         android:layout_width="match_parent"
@@ -20,7 +19,7 @@
         android:textColor="@color/black"
         android:layout_margin="30dp"
         android:textSize="20dp"
-        android:text="Find, get, and share books you love on Goodreads, the world's largest site for readers and book recommendations. More than 75 million members have added more than 2.2 billion books to their shelves."
+        android:text="Contact us on bookify@gmail.com"
         />
 
 </LinearLayout>
