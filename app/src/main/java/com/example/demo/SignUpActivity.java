@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +13,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 
@@ -137,6 +135,7 @@ public class SignUpActivity extends Fragment implements View.OnClickListener {
             new CustomToast().ShowToast(getActivity(), view, String.valueOf(R.string.selectcondition));
             return false;
         } else {
+            getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
             return true;
         }
     }

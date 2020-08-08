@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -208,8 +209,8 @@ public class AddressInfo extends AppCompatActivity {
                 }
                 else {
 
-                    //Intent intent1 = new Intent(getApplicationContext(),SummeryActivity.class);
-                    //startActivity(intent1);
+                    Intent intent1 = new Intent(getApplicationContext(),CheckoutActivity.class);
+                    startActivity(intent1);
 
                 }
 

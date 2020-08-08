@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -143,9 +144,8 @@ public class CheckoutActivity extends AppCompatActivity {
 
 
                 }
-                //Intent intent = new Intent(getApplicationContext(), ETicketActivity.class);
-                //intent.putExtra("owner", owner);
-               // startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), Confirmation.class);
+               startActivity(intent);
 
 
             }
