@@ -20,8 +20,8 @@ public class ProductDescription extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                   // Intent intent1 = new Intent(getApplicationContext(),order.class);
-                    //startActivity(intent1);
+                   Intent intent1 = new Intent(getApplicationContext(),AddressInfo.class);
+                    startActivity(intent1);
 
                 }
 
