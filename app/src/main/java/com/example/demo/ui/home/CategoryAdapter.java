@@ -1,6 +1,7 @@
 package com.example.demo.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 
 import com.example.demo.R;
+import com.example.demo.product_list;
 
 public class CategoryAdapter extends BaseAdapter {
 
@@ -45,9 +47,19 @@ public class CategoryAdapter extends BaseAdapter {
 
         catimage=convertView.findViewById(R.id.cat1);
         cattxt=convertView.findViewById(R.id.txtcat1);
+        cardView=convertView.findViewById(R.id.card);
 
         catimage.setImageResource(cat_Image[position]);
         cattxt.setText(cat_name[position]);
+        final View finalConvertView = convertView;
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, product_list.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                finalConvertView.getContext().startActivity(intent);
+            }
+        });
 
         return convertView;
     }

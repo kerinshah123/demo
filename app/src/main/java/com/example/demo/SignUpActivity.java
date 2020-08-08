@@ -72,6 +72,9 @@ public class SignUpActivity extends Fragment implements View.OnClickListener {
                 boolean valid = checkValidation();
                 if (valid) doSignUp();
                 break;
+            case R.id.alreay_user:
+                new Authenticate().replaceLoginFragment();
+                break;
 
         }
     }
