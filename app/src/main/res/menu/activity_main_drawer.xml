@@ -14,7 +14,7 @@
             android:title="Order" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_info_black_24dp"
+            android:icon="@drawable/ic_baseline_info_24"
             android:title="About us" />
         <item
             android:id="@+id/nav_contactus"
