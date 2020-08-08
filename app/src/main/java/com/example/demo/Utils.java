@@ -1,8 +1,5 @@
 package com.example.demo;
 
-/**
- * Created by Harsh on 2/23/2018.
- */
 
 public class Utils {
 
