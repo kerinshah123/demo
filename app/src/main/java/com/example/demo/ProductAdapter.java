@@ -58,7 +58,7 @@ public class ProductAdapter extends BaseAdapter {
         return convertView;
     }
 
-    String rate[]={"20","25","15","30","50"};
-    String pro_name[]={"Black Forest" , "Cheese Cake" , "Chocolate Walnet Pastry" , "Chocolate Walnet Cake" , "Orange Pastry"};
-    Integer pro_image[]={R.drawable.blackforest,R.drawable.cheesecake,R.drawable.chocolatewalnetp,R.drawable.chocolatewalnetcake,R.drawable.orangepastry};
+    String rate[]={"7","19","13","23","30","6","25","20","10"};
+    String pro_name[]={"I have a dream" , "The 7 habits of highly effective people" , "Tata Ratan His Legacy" , "Half girlfriend" , "Arise, Awake","2 States","Touch the sky","The 3 mistakes of my Life","Ratan tata biography"};
+    Integer pro_image[]={R.drawable.book,R.drawable.book1,R.drawable.book6,R.drawable.book9,R.drawable.book2,R.drawable.book8,R.drawable.book3,R.drawable.book7,R.drawable.book5};
 }
