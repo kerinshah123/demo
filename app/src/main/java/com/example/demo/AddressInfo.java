@@ -8,9 +8,17 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class AddressInfo extends AppCompatActivity {
@@ -208,6 +216,25 @@ public class AddressInfo extends AppCompatActivity {
                     street.requestFocus();
                 }
                 else {
+                    if (checkBox.isChecked()) {
+                        final Map<String, Object> data = new HashMap<>();
+                        data.put("country", country.getText().toString().trim());
+                        data.put("province", province.getText().toString().trim());
+                        data.put("zipcode", zipcode.getText().toString().trim());
+                        data.put("firstname", firstName.getText().toString().trim());
+                        data.put("lastname", lastName.getText().toString().trim());
+                        data.put("streetname", street.getText().toString().trim());
+                        //data.put("email", user);
+                        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        db.collection("Address").document().set(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(AddressInfo.this, "Address Details Saved", Toast.LENGTH_LONG).show();
+
+                            }
+                        });
+
+                    }
 
                     Intent intent1 = new Intent(getApplicationContext(),CheckoutActivity.class);
                     startActivity(intent1);
