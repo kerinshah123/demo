@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/carDetailsImage"
+        android:id="@+id/desc_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/book8"

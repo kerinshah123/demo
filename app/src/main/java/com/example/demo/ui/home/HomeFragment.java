@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
             protected void onBindViewHolder(@NonNull CategoryView holder, int position, @NonNull PojoCategory model) {
                 final String id = getSnapshots().getSnapshot(position).getId();
 
-                Picasso.with(getActivity())
+                Picasso.get()
                         .load(model.getCategory_image_url())
                         .into(holder.cat1);
                 holder.txtcat1.setText(model.getCategory_name());

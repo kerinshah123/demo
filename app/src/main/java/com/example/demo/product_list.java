@@ -65,7 +65,7 @@ public class product_list extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull ProductView holder, int position, @NonNull PojoProduct model) {
                 final String id = getSnapshots().getSnapshot(position).getId();
 
-                Picasso.with(getApplicationContext())
+                Picasso.get()
                         .load(model.getBook_image())
                         .into(holder.image_product);
                 holder.product_name.setText(model.getBook_name());
