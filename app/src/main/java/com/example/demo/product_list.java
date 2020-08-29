@@ -47,7 +47,7 @@ public class product_list extends AppCompatActivity {
 
         productDB = FirebaseFirestore.getInstance();
 
-        final Query Cat_query = productDB.collection("products_master");
+        final Query Cat_query = productDB.collection("books");
 
         FirestoreRecyclerOptions<PojoProduct> Cat_options = new FirestoreRecyclerOptions.Builder<PojoProduct>()
                 .setQuery(Cat_query, PojoProduct.class)
@@ -67,10 +67,10 @@ public class product_list extends AppCompatActivity {
                 final String id = getSnapshots().getSnapshot(position).getId();
 
                 Picasso.with(getApplicationContext())
-                        .load(model.getProduct_image())
+                        .load(model.getBook_image())
                         .into(holder.image_product);
-                holder.product_name.setText(model.getProduct_name());
-                //  holder.price.setText(model.getProduct_rates());
+                holder.product_name.setText(model.getBook_name());
+                holder.price.setText(model.getBook_rates());
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

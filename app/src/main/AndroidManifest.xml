@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ProductDescription">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Confirmation" />
         <activity
@@ -25,24 +21,29 @@
             android:name=".Splash"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".AddressInfo"
-            android:label="@string/app_name" />
+            android:label="@string/app_name" >
+
+        </activity>
         <activity
             android:name=".CheckoutActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".product_list"
+            android:name=".LoginActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".Authenticate"
-            android:label="@string/app_name" />
+            android:name=".product_list"
+            android:label="@string/app_name" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
     </application>
 
 </manifest>

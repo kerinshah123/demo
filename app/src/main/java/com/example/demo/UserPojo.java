@@ -2,7 +2,6 @@ package com.example.demo;
 
 public class UserPojo {
 
-
     String name;
     String email;
     String password;

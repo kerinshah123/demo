@@ -38,18 +38,18 @@ public class ProductDescription extends AppCompatActivity {
         Intent intent = getIntent();
         final String id = intent.getStringExtra("id").trim();
 
-        db.collection("products_master").document(id)
+        db.collection("books").document(id)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         DocumentSnapshot document = task.getResult();
-                        bookname.setText((CharSequence) document.get("product_name"));
-                        bookauthor.setText((CharSequence) document.get("product_name"));
-                        bookdescription.setText((CharSequence) document.get("product_description"));
-                        bookprice.setText((CharSequence) document.get("product_rates"));
+                        bookname.setText((CharSequence) document.get("book_name"));
+                        bookauthor.setText((CharSequence) document.get("book_author"));
+                        bookdescription.setText((CharSequence) document.get("book_description"));
+                        bookprice.setText((CharSequence) document.get("book_price"));
                         Picasso.with(getApplicationContext())
-                                .load(String.valueOf((CharSequence)document.get("product_image")))
+                                .load(String.valueOf((CharSequence)document.get("book_image")))
                                 .into(bookimage);
 
                     }

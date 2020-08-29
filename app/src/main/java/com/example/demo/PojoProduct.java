@@ -1,64 +1,60 @@
 package com.example.demo;
 
-
-
 public class PojoProduct {
-    int product_id;
-    String product_name;
-    String product_description;
-    String product_image;
-    String sub_category_id;
-    String product_rates;
+    String book_name;
+    String book_description;
+    String book_image;
+    String book_category_id;
+    String book_rates;
+    String book_author;
 
-    public int getProduct_id() {
-        return product_id;
+    public String getBook_name() {
+        return book_name;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public void setBook_name(String book_name) {
+        this.book_name = book_name;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getBook_description() {
+        return book_description;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setBook_description(String book_description) {
+        this.book_description = book_description;
     }
 
-    public String getProduct_description() {
-        return product_description;
+    public String getBook_image() {
+        return book_image;
     }
 
-    public void setProduct_description(String product_description) {
-        this.product_description = product_description;
+    public void setBook_image(String book_image) {
+        this.book_image = book_image;
     }
 
-    public String getProduct_image() {
-        return product_image;
+    public String getBook_category_id() {
+        return book_category_id;
     }
 
-    public void setProduct_image(String product_image) {
-        this.product_image = product_image;
+    public void setBook_category_id(String book_category_id) {
+        this.book_category_id = book_category_id;
     }
 
-    public String getSub_category_id() {
-        return sub_category_id;
+    public String getBook_rates() {
+        return book_rates;
     }
 
-    public void setSub_category_id(String sub_category_id) {
-        this.sub_category_id = sub_category_id;
+    public void setBook_rates(String book_rates) {
+        this.book_rates = book_rates;
     }
 
-    public String getProduct_rates() {
-        return product_rates;
+    public String getBook_author() {
+        return book_author;
     }
 
-    public void setProduct_rates(String product_rates) {
-        this.product_rates = product_rates;
+    public void setBook_author(String book_author) {
+        this.book_author = book_author;
     }
-
-
 
 
 }
