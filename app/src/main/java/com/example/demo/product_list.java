@@ -12,10 +12,10 @@ public class product_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
 
-        GridView gridView = findViewById(R.id.gridview2);
-
-        ProductAdapter productAdapter =new ProductAdapter(this);
-        gridView.setAdapter(productAdapter);
+//        GridView gridView = findViewById(R.id.gridview2);
+//
+//        ProductAdapter productAdapter =new ProductAdapter(this);
+//        gridView.setAdapter(productAdapter);
 
     }
 }
