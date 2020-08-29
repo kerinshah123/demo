@@ -5,7 +5,7 @@ public class PojoProduct {
     String book_description;
     String book_image;
     String book_category_id;
-    String book_rates;
+    String book_price;
     String book_author;
 
     public String getBook_name() {
@@ -40,12 +40,12 @@ public class PojoProduct {
         this.book_category_id = book_category_id;
     }
 
-    public String getBook_rates() {
-        return book_rates;
+    public String getBook_price() {
+        return book_price;
     }
 
-    public void setBook_rates(String book_rates) {
-        this.book_rates = book_rates;
+    public void setBook_price(String book_price) {
+        this.book_price = book_price;
     }
 
     public String getBook_author() {

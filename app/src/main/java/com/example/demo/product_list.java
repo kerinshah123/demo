@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -70,7 +69,7 @@ public class product_list extends AppCompatActivity {
                         .load(model.getBook_image())
                         .into(holder.image_product);
                 holder.product_name.setText(model.getBook_name());
-                holder.price.setText(model.getBook_rates());
+                holder.price.setText(model.getBook_price());
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
