@@ -1,7 +1,9 @@
 package com.example.demo;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
@@ -23,6 +25,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,7 +44,8 @@ public class LoginActivity extends Fragment implements View.OnClickListener {
     private static LinearLayout loginLayout;
     private static Animation shakeAnimation;
     private static ProgressDialog loginProgress;
-
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     public LoginActivity() {
 
@@ -149,10 +157,37 @@ public class LoginActivity extends Fragment implements View.OnClickListener {
             new CustomToast().ShowToast(getActivity(), view, String.valueOf(R.string.passwordhint));
             return false;
         } else {
-            getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+            loginuser();
+
             return true;
         }
 
+    }
+
+    public void loginuser() {
+        db.collection("user")
+                .whereEqualTo("email", txtloginemail)
+                .whereEqualTo("password", txtloginpassword)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_LONG).show();
+                            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
+                            editor.putBoolean(loginyes_no, true);
+                            editor.putString(Email_shared, loginemail.getText().toString());
+
+                            editor.commit();
+                            getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Email or Password Not correct", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }
 
